@@ -33,3 +33,34 @@ function operate(o,a,b){
         return operation;
     }
 }
+
+const page = document.querySelector('#page');
+page.style.display = "flex";
+page.style.flexDirection = "column";
+page.style.justifyContent = "center";
+page.style.flex = 1;
+page.style.height = '1200px';
+
+
+const container = document.querySelector('#container');
+container.style.border = '10px solid green';
+container.style.width = '500px';
+container.style.height = '600px';
+container.style.display = "flex";
+container.style.flexDirection = "column";
+container.style.alignSelf= "center";
+container.style.alignItems = "center";
+
+const calc = document.createElement('div');
+calc.style.border = '10px solid black';
+calc.style.backgroundColor = "gray";
+calc.textContent = "0";
+calc.style.width = '480px';
+calc.style.height = '100px';
+calc.style.display = "flex";
+calc.style.justifySelf = "flex-end";
+
+
+container.appendChild(calc);
+
+
