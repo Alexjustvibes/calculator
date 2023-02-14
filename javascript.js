@@ -1,3 +1,7 @@
+let displaynumber = [];
+
+let defaultOp = 0;
+
 const page = document.querySelector('#page');
 page.style.display = "flex";
 page.style.flexDirection = "column";
@@ -16,6 +20,7 @@ container.style.alignSelf= "center";
 container.style.alignItems = "center";
 
 const calc = document.createElement('div');
+calc.setAttribute("id", "calc");
 calc.style.border = '10px solid black';
 calc.style.backgroundColor = "gray";
 calc.style.width = '480px';
@@ -27,6 +32,7 @@ calc.style.justifyContent = "flex-end";
 container.appendChild(calc);
 
 const num = document.createElement('div');
+num.setAttribute("id", "num");
 num.textContent = "0";
 num.style.fontSize = "64px";
 num.style.alignSelf = "flex-end";
@@ -195,6 +201,101 @@ buttonE.style.height = '100px';
 buttonE.textContent = "=";
 
 innerCalc.appendChild(buttonE);
+
+button1.addEventListener('click', addNumber1);
+
+function addNumber1(){
+    const element = document.getElementById("num");
+    if(element === null){
+    displaynumber.push(1);
+    const num = document.createElement('div');
+    num.setAttribute("id", "num1");
+    num.textContent = 1;
+    num.style.fontSize = "64px";
+    num.style.alignSelf = "flex-end";
+
+    calc.appendChild(num);
+    console.log(displaynumber);
+    }
+    else{
+        element.remove();
+        displaynumber.push(1);
+        const num = document.createElement('div');
+        num.setAttribute("id", "num1");
+        num.textContent = 1;
+        num.style.fontSize = "64px";
+        num.style.alignSelf = "flex-end";
+    
+        calc.appendChild(num);
+        console.log(displaynumber);
+    }
+}
+
+button2.addEventListener('click', addNumber2);
+
+function addNumber2(){
+    const element = document.getElementById("num");
+    if(element === null){
+    displaynumber.push(2);
+    const num = document.createElement('div');
+    num.setAttribute("id", "num2");
+    num.textContent = 2;
+    num.style.fontSize = "64px";
+    num.style.alignSelf = "flex-end";
+
+    calc.appendChild(num);
+    console.log(displaynumber);
+    }
+    else{
+        element.remove();
+        displaynumber.push(2);
+        const num = document.createElement('div');
+        num.setAttribute("id", "num2");
+        num.textContent = 2;
+        num.style.fontSize = "64px";
+        num.style.alignSelf = "flex-end";
+    
+        calc.appendChild(num);
+        console.log(displaynumber);
+    }
+}
+button3.addEventListener('click', addNumber3);
+
+function addNumber3(){
+    const element = document.getElementById("num");
+    if(element === null){
+    displaynumber.push(3);
+    const num = document.createElement('div');
+    num.setAttribute("id", "num3");
+    num.textContent = 3;
+    num.style.fontSize = "64px";
+    num.style.alignSelf = "flex-end";
+
+    calc.appendChild(num);
+    console.log(displaynumber);
+    }
+    else{
+        element.remove();
+        displaynumber.push(3);
+        const num = document.createElement('div');
+        num.setAttribute("id", "num3");
+        num.textContent = 3;
+        num.style.fontSize = "64px";
+        num.style.alignSelf = "flex-end";
+    
+        calc.appendChild(num);
+        console.log(displaynumber);
+    }
+}
+
+buttonPP.addEventListener('click', plus);
+
+function plus(){
+    let number = displaynumber.join("");
+}
+
+
+
 
 
 
