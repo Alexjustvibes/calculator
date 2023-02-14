@@ -307,8 +307,124 @@ function addNumber3(){
 
 
 buttonPP.addEventListener('click', plus);
-
+let lastOp = 0;
 function plus(){
+    if(displaynumber.length === 0){
+
+        for(let i = 0; i < numcounter; i++){
+            const element = document.getElementById("numb");
+            element.remove();
+
+        let sum = defaultOp + defaultOp;
+        defaultOp = sum;
+        const num = document.createElement('div');
+    num.setAttribute("id", "numbs");
+    num.textContent = defaultOp;
+    num.style.fontSize = "64px";
+    num.style.alignSelf = "flex-end";
+
+    calc.appendChild(num);
+    
+    console.log(displaynumber);
+
+
+    numcounter = 0;
+    lastOp = "+";
+    }
+}
+    else{
+    let numbers = displaynumber.join("");
+    let number = parseInt(numbers);
+    console.log(number);
+    for(let i = 0; i < numcounter; i++){
+    const element = document.getElementById("numb");
+    element.remove();
+    }
+    let operation = "+";
+    
+    let sum = operate(operation,number,defaultOp);
+    console.log(sum);
+
+    for(let i = 0; i <= displaynumber.length; i++){
+        displaynumber.pop();
+        }
+
+    defaultOp = sum;
+    const num = document.createElement('div');
+    num.setAttribute("id", "numbs");
+    num.textContent = defaultOp;
+    num.style.fontSize = "64px";
+    num.style.alignSelf = "flex-end";
+
+    calc.appendChild(num);
+    
+    console.log(displaynumber);
+
+
+    numcounter = 0;
+    lastOp = "+";
+    }
+}
+
+buttonC.addEventListener('click', c);
+
+function c(){
+    if(defaultOp===0){
+        return;
+    }
+    if(displaynumber.length === 0){
+        const element1 = document.getElementById("numbs");
+        if(element1 !== null){
+            element1.remove();
+        }
+        for(let i = 0; i < numcounter; i++){
+            const element = document.getElementById("numb");
+            element.remove();
+            }
+        for(let i = 0; i <= displaynumber.length; i++){
+            displaynumber.pop();
+            }
+        const num = document.createElement('div');
+        num.setAttribute("id", "num");
+        num.textContent = "0";
+        num.style.fontSize = "64px";
+        num.style.alignSelf = "flex-end";
+        calc.appendChild(num);
+    
+        defaultOp = 0;
+    
+        numcounter = 0;
+        lastOp = 0;
+    }
+    else{
+    const element1 = document.getElementById("numbs");
+    if(element1 !== null){
+        element1.remove();
+    }
+    for(let i = 0; i < numcounter; i++){
+        const element = document.getElementById("numb");
+        element.remove();
+        }
+    for(let i = 0; i <= displaynumber.length; i++){
+        displaynumber.pop();
+        }
+    const num = document.createElement('div');
+    num.setAttribute("id", "num");
+    num.textContent = "0";
+    num.style.fontSize = "64px";
+    num.style.alignSelf = "flex-end";
+    calc.appendChild(num);
+
+    defaultOp = 0;
+
+    numcounter = 0;
+    lastOp = 0;
+    }
+}
+
+buttonE.addEventListener('click', E);
+
+function E(){
     if(displaynumber.length === 0){
 
         for(let i = 0; i < numcounter; i++){
@@ -363,61 +479,6 @@ function plus(){
     numcounter = 0;
     }
 }
-
-buttonC.addEventListener('click', c);
-
-function c(){
-    if(defaultOp===0){
-        return;
-    }
-    if(displaynumber.length === 0){
-        const element1 = document.getElementById("numbs");
-        if(element1 !== null){
-            element1.remove();
-        }
-        for(let i = 0; i < numcounter; i++){
-            const element = document.getElementById("numb");
-            element.remove();
-            }
-        for(let i = 0; i <= displaynumber.length; i++){
-            displaynumber.pop();
-            }
-        const num = document.createElement('div');
-        num.setAttribute("id", "num");
-        num.textContent = "0";
-        num.style.fontSize = "64px";
-        num.style.alignSelf = "flex-end";
-        calc.appendChild(num);
-    
-        defaultOp = 0;
-    
-        numcounter = 0;
-    }
-    else{
-    const element1 = document.getElementById("numbs");
-    if(element1 !== null){
-        element1.remove();
-    }
-    for(let i = 0; i < numcounter; i++){
-        const element = document.getElementById("numb");
-        element.remove();
-        }
-    for(let i = 0; i <= displaynumber.length; i++){
-        displaynumber.pop();
-        }
-    const num = document.createElement('div');
-    num.setAttribute("id", "num");
-    num.textContent = "0";
-    num.style.fontSize = "64px";
-    num.style.alignSelf = "flex-end";
-    calc.appendChild(num);
-
-    defaultOp = 0;
-
-    numcounter = 0;
-    }
-}
-
 
 
 
